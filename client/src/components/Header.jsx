@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
-import { set } from "mongoose";
 
 const Header = () => {
   const { setInput, input } = useAppContext();
