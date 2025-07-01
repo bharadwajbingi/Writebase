@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --color-primary: black;
+}
 * {
   font-family: "Outfit", sans-serif;
 }
@@ -9,9 +12,6 @@
   display: none;
 }
 
-@theme {
-  --color-primary: black;
-}
 .rich-text {
   font-size: 15px;
 }

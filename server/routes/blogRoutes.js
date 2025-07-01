@@ -3,6 +3,7 @@ import {
   addBlog,
   addComment,
   deleteBlogById,
+  generateContent,
   getAllBlogs,
   getBlogById,
   getBlogComments,
@@ -19,6 +20,7 @@ blogRounter.get("/:blogId", getBlogById);
 blogRounter.post("/delete", auth, deleteBlogById);
 blogRounter.post("/toggle-publish", auth, togglePublish);
 blogRounter.post("/add-comment", addComment);
-blogRounter.get("/comments", getBlogComments);
+blogRounter.post("/comments", getBlogComments);
+blogRounter.post("/generate", auth, generateContent);
 
 export default blogRounter;

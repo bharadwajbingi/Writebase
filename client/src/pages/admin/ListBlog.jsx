@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { blog_data } from "../../assets/assets";
-import BlogTabelItem from "../../components/admin/BlogTabelItem";
+import BlogTableItem from "../../components/admin/BlogTableItem";
+import { useAppContext } from "../../context/AppContext";
+import toast from "react-hot-toast";
 
 const ListBlog = () => {
   const [blogs, setBlogs] = useState([]);
-  const fetachBlogs = async () => {
-    setBlogs(blog_data);
+  const { axios } = useAppContext();
+  const fetchBlogs = async () => {
+    try {
+      const { data } = await axios.get("/api/admin/blogs");
+      if (data.success) {
+        setBlogs(data.blogs);
+      } else {
+        toast.error(data.message || "Faild to ftch blogs");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
+
   useEffect(() => {
-    fetachBlogs();
-  });
+    fetchBlogs();
+  }, []);
   return (
     <div className="min-h-screen flex-1 pt-5 px-5 sm:pt-12 sm:pl-16 bg-blue-50/50">
       <h1 className=" m-2 mt-6 text-gray-600 font-semibold">All blogs</h1>
@@ -37,10 +50,10 @@ const ListBlog = () => {
           <tbody>
             {blogs.map((blog, index) => {
               return (
-                <BlogTabelItem
+                <BlogTableItem
                   key={blog._id}
                   blog={blog}
-                  fetachBlogs={fetachBlogs}
+                  fetchBlogs={fetchBlogs}
                   index={index}
                 />
               );
