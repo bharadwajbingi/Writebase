@@ -12,7 +12,7 @@ Writebase is a modern, full-stack blogging platform built for easy content creat
 
 ## Tech Stack
 
-- **Next.js (React)** – Frontend framework
+- **React** – Frontend framework
 - **Tailwind CSS** – Styling
 - **Node.js** – Backend runtime
 - **Express** – Backend framework
