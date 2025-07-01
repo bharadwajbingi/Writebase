@@ -3,6 +3,7 @@
 Writebase is a modern, full-stack blogging platform built for easy content creation and management. Administrators can log in securely, publish or unpublish blog posts, and organize content by category, while readers browse and search posts in a clean, responsive interface. The platform includes AI-powered writing suggestions via Google’s Gemini API to assist authors. The frontend is built with Next.js (React) and styled using Tailwind CSS, and the backend runs on Node.js with Express. Data is stored in MongoDB Atlas (a fully-managed cloud database), and JSON Web Tokens (JWT) are used for secure authentication.
 
 ## Screenshots
+![image](https://github.com/user-attachments/assets/7e913f91-0d9c-417a-9b66-313fd433e0ed)
 
 ## Live Demo & GitHub
 
