@@ -56,6 +56,7 @@ const AddBlog = () => {
         setImage(false);
         setTitle("");
         setSubTitle("");
+
         quillRef.current.root.innerHTML = "";
         setCategory("Startup");
       } else {
